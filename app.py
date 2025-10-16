@@ -8,7 +8,10 @@ db = client.test
 collection = db["users"]
 
 
-
+@app.route('/')
+def home():
+    return render_template('index.html')
+    
 @app.route('/signup', methods=['GET', 'POST'])
 def signup():
     form_data = dict(request.form) # Convert ImmutableMultiDict to a regular dictionary
